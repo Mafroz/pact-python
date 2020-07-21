@@ -96,6 +96,7 @@ class Verifier(object):
         provider_tags = kwargs.get('provider_tags', [])
         states_setup_url = kwargs.get('provider_states_setup_url', None)
         verbose = kwargs.get('verbose', False)
+        publish_version = kwargs.get('publish_version', None)
 
         options = {
             'log_dir': log_dir,
@@ -107,7 +108,8 @@ class Verifier(object):
             'consumer_tags': list(consumer_tags),
             'provider_tags': list(provider_tags),
             'provider_states_setup_url': states_setup_url,
-            'verbose': verbose
+            'verbose': verbose,
+            'publish_version': publish_version
         }
         return self.filter_empty_options(**options)
 
